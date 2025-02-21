@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <style>
+        /* style.css content (add keyframes here) */
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* Example background color */
+            margin: 0; /* Remove default margin */
+        }
+
+        .jokes-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center text within the container */
+            max-width: 600px; /* Set a maximum width for responsiveness */
+        }
+
+        .jokes-container img {
+            max-width: 100%; /* Make image responsive */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .joke-setup, .joke-punchline {
+            margin-bottom: 10px;
+            font-size: 1.2rem; /* Slightly larger font size */
+        }
+
+        .joke-btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .joke-btn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+
+        /* Keyframes for a subtle fade-in effect on the joke text */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .joke-setup, .joke-punchline {
+            animation: fadeIn 0.5s ease-in-out; /* Apply the fade-in animation */
+        }
+
+        /* Keyframes for a slight bounce effect on the button */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px); /* Adjust bounce height as needed */
+            }
+            60% {
+                transform: translateY(-3px); /* Adjust bounce height as needed */
+            }
+        }
+
+        .joke-btn {
+            animation: bounce 100s infinite; /* Apply the bounce animation */
+        }
+        .hi{
+            animation: bounce 100s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Joke Generator</h1>
+    <div class="jokes-container">
+        <img class="hi" src="https://th.bing.com/th/id/OIP.ABrXwvt49mGLKU-JxBczPgHaHa" width="100vw" alt="Joke Image">
+        <div class="joke-setup" id="joke-setup">Loading Joke...</div>
+        <div class="joke-punchline" id="joke-punchline"></div>
+        <button class="joke-btn" id="joke-btn">Get Another Joke</button>
+    </div>
+</body>
+</html>
